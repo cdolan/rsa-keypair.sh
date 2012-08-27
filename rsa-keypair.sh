@@ -16,11 +16,6 @@ function usage {
 EOF
 }
 
-function genrsakey {
-  $OPENSSL genrsa -out $1.pem $2
-  $OPENSSL rsa -in $1.pem -pubout > $1.pub
-}
-
 while getopts "ho:b:" OPTION
 do
   case $OPTION in
@@ -36,7 +31,7 @@ do
       ;;
     ?)
       usage
-      exit
+      exit 1
       ;;
   esac
 done
@@ -47,4 +42,7 @@ then
   exit 1
 fi
 
-genrsakey $KEYNAME $KEYLEN
+$OPENSSL genrsa -out $KEYNAME.pem $KEYLEN
+$OPENSSL rsa -in $KEYNAME.pem -pubout > $KEYNAME.pub
+
+exit
