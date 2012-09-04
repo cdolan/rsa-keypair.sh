@@ -16,28 +16,16 @@ function usage {
 EOF
 }
 
-while getopts "ho:b:" OPTION
-do
+while getopts "ho:b:" OPTION; do
   case $OPTION in
-    h)
-      usage
-      exit 1
-      ;;
-    o)
-      KEYNAME=$OPTARG
-      ;;
-    b)
-      KEYLEN=$OPTARG
-      ;;
-    ?)
-      usage
-      exit 1
-      ;;
+    h) usage ; exit 1   ;;
+    o) KEYNAME=$OPTARG  ;;
+    b) KEYLEN=$OPTARG   ;;
+    ?) usage ; exit 1   ;;
   esac
 done
 
-if [ -z $KEYNAME ]
-then
+if [ -z $KEYNAME ]; then
   usage
   exit 1
 fi
