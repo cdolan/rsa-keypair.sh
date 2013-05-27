@@ -6,19 +6,19 @@ Simplifies generating an RSA key pair.
 
 The simpliest example:
 
-`sh ./rsa-keypair.sh mykey`
+`./rsa-keypair.sh mykey`
 
 If you want a really strong key:
 
-`sh ./rsa-keypair.sh -b 4096 mykey`
+`./rsa-keypair.sh -b 4096 mykey`
 
 To generate a key with an X509 certificate:
 
-`sh ./rsa-keypair.sh -c mykey`
+`./rsa-keypair.sh -c mykey`
 
 ## Usage
 <pre>
-usage: sh ./rsa-keypair.sh [options] keyname
+usage: ./rsa-keypair.sh [options] keyname
 
 Simplifies generating an RSA key pair.
 
