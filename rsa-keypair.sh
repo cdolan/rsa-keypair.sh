@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 OPENSSL=openssl
 KEYLEN=2048
